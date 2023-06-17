@@ -26,12 +26,6 @@ public class User {
     private Role role;
     @Column(nullable = false)
     private boolean enabled=true;
-//    @Column(nullable = false)
-//    private boolean accountNonExpired=true;
-//    @Column(nullable = false)
-//    private boolean credentialsNonExpired=true;
-//    @Column(nullable = false)
-//    private boolean accountNonLocked=true;
 
 
     public LocalDateTime  createdTime() {

@@ -55,14 +55,6 @@ public class SecurityConfig {
                 .passwordEncoder(passwordEncoder());
     }
 
-//    @Bean
-//    JdbcUserDetailsManager users(DataSource dataSource) {
-//        User.builder()
-//                .username(userRepository.findByUsername())
-//        JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
-//        return jdbcUserDetailsManager;
-//    }
-
     @Bean
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
 
@@ -72,7 +64,7 @@ public class SecurityConfig {
                     auth.requestMatchers("/", "/login").permitAll();
                     auth.requestMatchers("/user").hasRole("USER");
                     auth.requestMatchers("/admin").hasRole("ADMIN");
-                })//.headers(headers -> headers.frameOptions().sameOrigin())
+                })
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults())
                 .build();

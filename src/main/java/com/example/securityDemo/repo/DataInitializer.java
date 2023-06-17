@@ -18,7 +18,7 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // muserRepository.deleteAll();
+        //userRepository.deleteAll();
          if (userRepository.count() == 0) {
             User admin = new User();
             admin.setUsername("a");
