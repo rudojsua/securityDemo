@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Page</title>
+    <!-- Ваши стили CSS -->
+    <style>
+        .chat-container {
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .message {
+            margin-bottom: 10px;
+        }
+        .user-message {
+            color: blue;
+        }
+        .bot-message {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<h1>Чат</h1>
+<div class="chat-container">
+    <div class="message user-message">
+        <p>Привет! Я пользователь.</p>
+    </div>
+    <div class="message bot-message">
+        <p>Привет! Я бот.</p>
+    </div>
+    <!-- Здесь будут отображаться сообщения чата -->
+</div>
+<form id="chat-form" th:action="@{/chat}" method="post">
+    <input type="text" name="message" placeholder="Введите сообщение">
+    <button type="submit">Отправить</button>
+</form>
+<!-- Ваши скрипты JavaScript -->
+</body>
+</html>

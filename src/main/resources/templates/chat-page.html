@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Page</title>
+</head>
+<body>
+<h1>Chat Page</h1>
+
+<div>
+    <h3>Chat Messages:</h3>
+    <ul>
+        <li th:each="message : ${chatMessages}" th:text="${message}"></li>
+    </ul>
+</div>
+
+<div>
+    <h3>ChatGPT Response:</h3>
+    <p th:text="${response}"></p>
+</div>
+
+<form action="/chat" method="post">
+    <input type="text" name="message">
+    <button type="submit">Send</button>
+</form>
+</body>
+</html>
